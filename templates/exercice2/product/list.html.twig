@@ -1,0 +1,6 @@
+{{ include('exercice2/product/header.html.twig') }}
+<ul>
+    {% for announce in tableau_a %}
+        <li><a href="{{ path('annoucement_details', {id: announce.id}) }}">{{ announce.title }}</a></li>
+    {% endfor %}
+</ul>

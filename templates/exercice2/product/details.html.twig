@@ -1,0 +1,10 @@
+{{ include('exercice2/product/header.html.twig') }}
+ {% for announce in tableau_a %}
+     {% if announce.id == id %}
+        <p>{{ announce.id }}</p>
+        <p>{{ announce.title }}</p>
+        <p>{{ announce.content }}</p>
+        <p>{{ announce.price }}</p>
+        <p>{{ announce.created_date|date("d/m/y") }}</p>
+     {% endif %}
+ {% endfor %}
