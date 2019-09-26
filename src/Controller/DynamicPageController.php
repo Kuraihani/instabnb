@@ -2,12 +2,23 @@
 
 
 namespace App\Controller;
+use App\DTO\CreateAnnoucement;
+use App\Entity\AnnoucementEntity;
+use App\Repository\AnnoucementRepository;
+use App\Service\UserManagerService;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 
 class DynamicPageController extends AbstractController
 {
+    private $managerService;
+    public function __construct(UserManagerService $managerService)
+    {
+        $this->managerService = $managerService;
+    }
+
+
     /**
      * @Route(
      *     "/annoucements/{page}",
@@ -30,8 +41,13 @@ class DynamicPageController extends AbstractController
             ['id' => 9, 'title' => 'Annoucement 9', 'content' => 'content_titre9', 'price' => 90, 'created_date' => new\DateTime()],
             ['id' => 10, 'title' => 'Annoucement 10', 'content' => 'content_titre10', 'price' => 100, 'created_date' => new\DateTime()],
         ];
+
+
+        $tableau_b = $this->managerService->findAnnoucements(3);
+
         return $this->render('exercice2/product/list.html.twig', [
             'tableau_a' => $tableau_a,
+            'tableau_b' => $tableau_b,
         ]);
     }
 }

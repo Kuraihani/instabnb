@@ -1,6 +1,12 @@
 {{ include('exercice2/product/header.html.twig') }}
-<ul>
+<h3>Table</h3>
+<br/><br/>
     {% for announce in tableau_a %}
-        <li><a href="{{ path('annoucement_details', {id: announce.id}) }}">{{ announce.title }}</a></li>
+        <a href="{{ path('annoucement_details', {id: announce.id}) }}">{{ announce.title }}</a><br/>
     {% endfor %}
-</ul>
+<br/><br/>
+<h3>Table BDD</h3>
+<br/><br/>
+    {% for announce in tableau_b %}
+        <a>{{ announce.title }}</a><br/>
+    {% endfor %}
