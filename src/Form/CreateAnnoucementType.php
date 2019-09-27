@@ -18,7 +18,7 @@ class CreateAnnoucementType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
-            ->add('title', TextType::class, ['required'=> true, 'label'=>'Title', 'required'=>'you need to fill this field.'])
+            ->add('title', TextType::class, ['required'=> true, 'label'=>'Title'])
             ->add('price', IntegerType::class, ['label'=>'Price'])
             ->add('content', TextareaType::class, ['required'=> true, 'label'=>'Content']);
     }
