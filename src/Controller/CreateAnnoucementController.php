@@ -21,7 +21,7 @@ class CreateAnnoucementController extends AbstractController
     }
 
     /**
-     * @Route("/CreateAnnoucement", name="CreateAnnoucement")
+     * @Route("{_locale}/CreateAnnoucement", name="CreateAnnoucement")
      */
     public function index(Request $request)
     {

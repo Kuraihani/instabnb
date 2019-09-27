@@ -8,5 +8,5 @@
 <h3>Table BDD</h3>
 <br/><br/>
     {% for announce in tableau_b %}
-        <a>{{ announce.title }}</a><br/>
+        <a href="{{ path('annoucement_details', {id: announce.id}) }}">{{ announce.title }}</a><br/>
     {% endfor %}

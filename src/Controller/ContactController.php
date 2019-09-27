@@ -24,11 +24,11 @@ class ContactController extends AbstractController
     }
 
     /**
-     * @Route("/contact", name="contact")
+     * @Route("{_locale}/contact", name="contact")
      */
     public  function  index(Request $request)
     {
-        dump($this->contactService->send('Hello'));die;
+        dump($request);die;
         $contact = new Contact();
         $form = $this->createForm(ContactType::class, $contact);
         $form->handleRequest($request);

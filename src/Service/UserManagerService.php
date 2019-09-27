@@ -37,5 +37,13 @@ class UserManagerService
 
     }
 
+    public  function findAnnoucementsdetails($id)
+    {
+        return $this->manager
+            ->getRepository(AnnoucementEntity::class)
+            ->findAnnoucementsdetails($id);
+
+    }
+
 
 }

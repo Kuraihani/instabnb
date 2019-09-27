@@ -4,10 +4,10 @@
     {{ include('exercice2/product/header.html.twig') }}
     {{ form_start(CreateAnnoucementform) }}
 
-    {{ form_row(CreateAnnoucementform.title) }}
-    {{ form_row(CreateAnnoucementform.price) }}
-    {{ form_row(CreateAnnoucementform.content) }}
+    {{ form_row(CreateAnnoucementform.title)}}
+    {{ form_row(CreateAnnoucementform.price)}}
+    {{ form_row(CreateAnnoucementform.content)}}
 
-    <button type="submit">Submit</button>
+    <button type="submit">{{ 'Submit'|trans }}</button>
     {{ form_end(CreateAnnoucementform) }}
 {% endblock %}
